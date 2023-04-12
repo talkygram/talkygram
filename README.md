@@ -1,5 +1,7 @@
 ### Hi there 👋
 
+Talkygram is an open-source social media platform that is currently being developed. Stay tuned for more!
+
 <!--
 **talkygram/talkygram** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
