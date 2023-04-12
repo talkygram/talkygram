@@ -1,0 +1,22 @@
+//This is just an exaple of a talkygram post and how it would be stored in the database.
+{
+  "username": "BigDogg",
+  "links": [],
+  "text": {
+    "Hello people of earth!": {
+      "comments": [ "hi", "laaammmmmmeeeee!!!" ],
+      "interactions": []
+    },
+    "I am speaking to you from my secret base on the MOON!!!": {
+      "comments": [ "Ya your capping about that my boi" ],
+      "interactions": []
+    }
+  },
+  "reposts": 12,
+  "comments": [ "OMG thats lit" ],
+  "date": "4/7/2023",
+  "time": "1943",
+  "hashtags": [ "space" ],
+  "mentions": [],
+  "verified": 1
+}

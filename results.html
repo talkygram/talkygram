@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"search query/phrase" - Search</title>
+
+    <link rel="stylesheet" href="results.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="script2.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-content-left">
+                <p class="logo-header">talkygram</p>
+                <div class="search-bar-container">
+                    <input type="text" id="search-bar" placeholder="Search...">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+
+            <div class="header-content-right">
+                <button class="sign-in-button">Sign In</button>
+            </div>
+    </header>
+
+    <main>
+        <section>
+            
+            <div class="results-container">
+                <!-- JSON goes here -->
+                <!-- Does JSOn still inject here? My code was changed. -->
+
+                <div id="post-container"></div>
+
+                <form id="create-post-form">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" placeholder="Enter your username">
+                    <label for="location">Location:</label>
+                    <input type="text" name="location" id="location" placeholder="Enter your location">
+                    <label for="text">Text:</label>
+                    <textarea name="text" id="text" placeholder="Enter your post"></textarea>
+                    <label for="hashtags">Hashtags:</label>
+                    <input type="text" name="hashtags" id="hashtags" placeholder="Enter your hashtags (comma-separated)">
+                    <button type="submit">Post</button>
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2023 talkygram</p>
+        </div>
+    </footer>
+</body>
+</html>
