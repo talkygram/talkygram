@@ -86,11 +86,13 @@ section {
     color: white;
     opacity: 1; /* Firefox */
   }
-  
+
+/* stylelint-disable-next-line */
 ::placeholder { /* Internet Explorer 10-11 */
     color: white;
   }
   
+/* stylelint-disable-next-line */
 ::placeholder { /* Microsoft Edge */
     color: white;
   }

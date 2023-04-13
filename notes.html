@@ -1,15 +1,84 @@
-<!-- We need to start using a version control system.  Trying to remember what I completed last shift vs. what the codebase currently
-contains is something that is easier/faster to understand with git/github.
+<!-- Talkygram Style/Structure Guide -->
 
-- Proper method for documenting JavaScript code (only worry about short-form documentation, not long-form documentation) - read link below
-	+ This documentation will help everyone understand the codebase and what has already been developed.
-	+ No need to document html and css, that code is self-explanatory.
+<!-- Open repo/folder/project from z-drive on computer. I could not implement linters on a network fileshare - needed to 
+    map a drive -->
+<!-- See subsequent section regarding linters -->
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+
+Naming Conventions
+<!-- The naming convention in programming languages (JavaScript and python) we be snake_case (function and variable names 
+    are separated by underscore and the first letter of each word is lowercase) -->
+let variable_name = "value";
+
+function function_name() {
+    // code
+}
+
+<!-- For html and css we will use kebab-case (class and id names are separated by a hyphen and the first letter of each 
+    word is lowercase) -->
+<div class="class-name"></div>
+
+<p id="id-name">text</p>
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+
+JavaScript Arrow Functions
+<!-- Arrow functions were introduce in ES6.  They allow us to write shorter function syntax. -->
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_arrow_function
+
+<!-- Traditional anonymous function -->
+(function (a) {
+  return a + 100;
+});
+
+<!-- 1. Remove the word "function" and place arrow between the argument and opening body bracket -->
+(a) => {
+  return a + 100;
+};
+
+<!-- 2. Remove the body braces and word "return" — the return is implied. -->
+(a) => a + 100;
+
+<!-- 3. Remove the parameter parentheses -->
+a => a + 100;
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+
+Code Documentation Conventions
+<!-- Link below contains the proper method for documenting JavaScript code (only worry about short-form documentation, not long-form documentation)
+    This documentation will help everyone understand the codebase and what has already been developed.
+	No need to document html and css, that code is self-explanatory. -->
     https://gomakethings.com/whats-the-best-way-to-document-javascript/
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
 
-- We need to consolidate files and refactor code.
-    + homepage.html and homepage.css are separate from results page.
-    + Only should have one html, css, and javascript file for results page - shouldnt have multiple files for each language right now.
+Git and Github
+<!-- We are now using git and github as a version control system.
+The main branch is protected
+We will be pushing to dev branch
+-->
+"git add [file name]" <!--to add file to staging area -->
+"git commit -m "message"" <!-- to commit changes -->
+https://gist.github.com/tonibardina/9290fbc7d605b4f86919426e614fe692
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+
+Linters
+<!-- Linters are used to check for errors in code.  They are a great tool to help us write better code.
+    We will be using eslint and stylelint to lint our code.
+    We will be using the airbnb style guide for both linters. -->
+
+<!-- To run stylelint on the CSS files in talkygram, use the command below: -->
+npx stylelint "**/*.css"
+
+<!-- To run eslin on JavaScript files in talkygram, use the command below: -->
+Run on two files
+npx eslint file1.js file2.js
+
+Run on multiple files
+npx eslint lib/**
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- - We need to refactor code.
     + We need to refactor the code to make it more readable and understandable.
+    + Implement arrow function syntax
     + Need better documentation for javascript code.
 
 -Kyle -->

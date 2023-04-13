@@ -60,11 +60,13 @@ body {
     opacity: 1; /* Firefox */
 }
 
+/* stylelint-disable-next-line */
 ::placeholder { /* Internet Explorer 10-11 */
     color: white;
     padding-left: 0.5rem;
 }
 
+/* stylelint-disable-next-line */
 ::placeholder { /* Microsoft Edge */
     color: white;
     padding-left: 0.5rem;
@@ -131,6 +133,7 @@ footer {
     margin: auto;
     border: solid 5rem yellow;
 }
+
 #create-post-form {
     width: 25%;
     position: absolute;
@@ -147,7 +150,6 @@ footer {
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 10px;
-    border: solid 2rem orange;
 }
 
 .post-header {
@@ -224,7 +226,7 @@ textarea {
 }
 
 input[type="submit"],
-button {
+#create-post-form button {
     padding: 5px 10px;
     border-radius: 5px;
     border: none;
@@ -234,7 +236,7 @@ button {
 }
 
 input[type="submit"]:hover,
-button:hover {
+#create-post-form button:hover {
     background-color: #0069d9;
 }
 
