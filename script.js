@@ -1,16 +1,28 @@
 const resultsContainer = document.querySelector(".results-container");
 
-//retrieves data from bucket and add names to html
-function printjsondata(location, bucket, filename) {
+/**
+* print_json_data() fetches the data from the Linode Object Storage bucket and prints its data to
+  an HTML ul element.
+* @param {[HTML element]} location - The HTML element to print the data to.
+* @param {[string]} bucket - The name of the Linode Object Storage bucket.
+* @param {[string]} filename - The name of the file in the Linode Object Storage bucket.
+*/
+function print_json_data(location, bucket, filename) {
     fetch(`https://${bucket}.us-southeast-1.linodeobjects.com/${filename}`)
+        //  parses the response as a JSON object and returns a promise.
         .then(response => response.json())
+        // prints the data to the HTML element.
         .then(data => {
+            // try catch block attempts to loop through the JSON array "data" and create an "li"
+            // element for each object in the array, then appends it to the HTML element.
             try {
                 data.forEach(person => {
                     const li = document.createElement("li");
                     li.textContent = person.name;
                     location.appendChild(li);
                 });
+            // Catch block creates an "li" element if the try block produces an error. The "li"
+            // is then appended to the "ul" element.
             } catch (error) {
                 const li = document.createElement("li");
                 li.textContent = data.name;
@@ -19,7 +31,7 @@ function printjsondata(location, bucket, filename) {
         });
 }
 
-function createContainers(lists) {
+function create_containers(lists) {
     try {
         lists.forEach(list => {
             const ul = document.createElement("ul");
