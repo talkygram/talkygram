@@ -35,13 +35,20 @@ function createPost(username, location, text, hashtags) {
     addPostToContainer(newPost);
 }
 
-// Add a post to the container
+/**
+ * addPostToContainer() adds a post to the user interface by creating the HTML for the post and inserting it into the postContainer element
+ * @param {object} post - The post object to be added to the user interface
+ */
 function addPostToContainer(post) {
     const postHTML = createPostHTML(post);
     postContainer.insertAdjacentHTML('afterbegin', postHTML);
 }
 
-// Create the HTML for a post
+/**
+ * createPostHTML() takes a post object and returns an HTML representation of the post
+ * @param {object} post The post object to be added to the user interface
+ * @returns The HTML representation of the post
+ */
 function createPostHTML(post) {
     return `
     <div class="post" data-id="${post.id}">
