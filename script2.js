@@ -92,7 +92,10 @@ function createPostHTML(post) {
   `;
 }
 
-// Toggle the visibility of the interactions when the text is clicked
+/**
+ * toggleInteractions() allows users to toggle the visibility of the comments and interactions for a post
+ * @param {object} textElement 
+ */
 function toggleInteractions(textElement) {
     const comments = textElement.querySelector('.post-comments');
     const interactions = textElement.querySelector('.post-interactions');
@@ -100,7 +103,11 @@ function toggleInteractions(textElement) {
     interactions.classList.toggle('show');
 }
 
-// Add a comment to a post
+/**
+ * addComment() allows users to add new comments to a post by filling out/submitting a form and udpating the posts's comment section with a new comment
+ * @param {object} form - The form DOM element containing the comment input and submit button
+ * @returns - A boolean value indicating whether or not the form should be submitted
+ */
 function addComment(form) {
     const post = form.closest('.post');
     const commentInput = form.querySelector('input[name="comment"]');
@@ -119,7 +126,11 @@ function addComment(form) {
     return false;
 }
 
-// Add an interaction to a post
+/**
+ * addInteraction() allows users to like or share a post by clicking a button and updating the post's interactions section with the new number of likes/shares
+ * @param {object} form - The form DOM element containing the like/share buttons
+ * @returns - A boolean value indicating whether or not the form should be submitted
+ */
 function addInteraction(form) {
     const post = form.closest('.post');
     const button = form.querySelector('button[type="submit"]');
@@ -137,18 +148,27 @@ function addInteraction(form) {
     return false;
 }
 
-// Generate a unique ID for a post
+/**
+ * generateId() generates a random ID string that can be used to identify a post or data object
+ */
 function generateId() {
     return '_' + Math.random().toString(36).substr(2, 9);
 }
 
-// Get the index of a post in the data object
+/**
+ * getPostIndex() returns the index of the post in the `data.posts` array whose ID matches the ID of the post element
+ * @param {object} postElement 
+ * @returns - The index of the first element in `data.posts` whose ID matches the ID of the post element
+ */
 function getPostIndex(postElement) {
     const postId = postElement.dataset.id;
     return data.posts.findIndex(post => post.id === postId);
 }
 
-// Load the posts from the data object
+/**
+ * loadPosts() loads the posts from the data object into the user interface
+ * @param {object} data - The data object containing the posts to be loaded into the user interface
+ */
 function loadPosts(data) {
     data.posts.forEach(post => {
         addPostToContainer(post);
@@ -160,7 +180,10 @@ function updateData(data) {
     // TODO: Implement data storage (e.g. saving to a JSON file)
 }
 
-// Get the current date (in the format "M/D/YYYY")
+/**
+ * getCurrentDate() returns the current date in the format "MM/DD/YYYY"
+ * @returns - The current date in the format "MM/DD/YYYY"
+ */
 function getCurrentDate() {
     const now = new Date();
     const month = now.getMonth() + 1;
@@ -169,7 +192,10 @@ function getCurrentDate() {
     return `${month}/${day}/${year}`;
 }
 
-// Get the current time (in the format "HHMM")
+/**
+ * getCurrentTime() returns the current time in the format "HHMM" using a 24-hour clock
+ * @returns - The current time in the format "HHMM"
+ */
 function getCurrentTime() {
     const now = new Date();
     const hours = now.getHours().toString().padStart(2, '0');
