@@ -1,7 +1,23 @@
+@font-face {
+    font-family: 'opendyslexic3bold';
+    src: url('fonts/opendyslexic3-bold-webfont.woff2') format('woff2'), url('fonts/opendyslexic3-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'opendyslexic3regular';
+    src: url('fonts/opendyslexic3-regular-webfont.woff2') format('woff2'), url('fonts/opendyslexic3-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: opendyslexic3regular, Arial, sans-serif;
+    font-size: 12px;
 }
 
 html {
@@ -10,15 +26,18 @@ html {
 
 body {
     height: 100%;
-    background-color: rgb(51 51 51);
+    background-color: #2c2c2c;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(26 26 26);
+    background-color: #1A1A1A;
     line-height: 3rem;
 }
 
@@ -33,7 +52,7 @@ body {
     margin: 0 2rem;
     font-family: "Brush Script MT", "Brush Script Std", cursive;
     font-size: 2rem;
-    color: #fddefd;
+    color: #FDDEFD;
     text-shadow: 0 0 7px #F0F, 0 0 10px #F0F, 0 0 21px #F0F, 0 0 42px #F0F, 0 0 151px #F0F;
 }
 
@@ -49,9 +68,16 @@ body {
     border-bottom: 2px solid black;
     border-left: 2px solid black;
     color: white;
-    background-color: rgb(51 51 51);
-    font-size: 1.5rem;
+    background-color: #1A1A1A;
+    font-size: 1rem;
     padding: 1rem 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-bar:focus {
+    width: 20rem;
+    background-color: #282828;
+    border-color: #00C8FF;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -79,7 +105,7 @@ body {
     float: right;
     height: 2rem;
     width: 2rem;
-    background-color: rgb(51 51 51);
+    background-color: #1A1A1A;
     font-size: 1rem;
     border: none;
     cursor: pointer;
@@ -88,30 +114,17 @@ body {
 
 .header-content-right button {
     height: 1.5rem;
-    border: 1px solid #F0F;
-    color: #F0F;
-    background-color: rgb(51 51 51);
+    border: 1px solid #00C8FF;
+    color: #00C8FF;
+    background-color: #1A1A1A;
     border-radius: 5px;
     font-size: 1rem;
     margin: 0 0.5rem;
     padding: 0 0.5rem;
 }
 
-main section {
-    height: 75rem;
-}
-
-.results-container {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    color: #F0F;
-    height: 100%;
-    margin: 5rem 0 0 5rem;
-}
-
 footer {
-    position: fixed;
+    margin-top: auto;
     left: 0;
     bottom: 0;
     line-height: 2rem;
@@ -127,29 +140,43 @@ footer {
     color: #00c8ff;
 }
 
-.post-form {
-    width: 25%;
-    position: absolute;
-    top: 5rem;
-    left: 2rem;
-    padding: 1rem;
-    border: .5rem solid rgb(26 26 26);
-    border-radius: 2rem;
-    background-color: #ccc;
+main section {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+#post-container {
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .post {
-    border: 1px solid #ccc;
+    width: 80%;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #282828;
+    color: #f0f0f0;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.2rem;
 }
 
 .post-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .post-username {
@@ -161,18 +188,19 @@ footer {
 }
 
 .post-location {
-    margin-left: 10px;
+    margin-left: 1rem;
     font-style: italic;
 }
 
 .post-text {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
     cursor: pointer;
+    line-height: 1.5rem;
 }
 
 .post-hashtags {
     font-style: italic;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .post-interactions {
@@ -191,46 +219,61 @@ footer {
 }
 
 .post-comments {
-    margin-top: 10px;
+    margin-top: 1rem;
 }
 
 .post-comment {
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
 }
 
 /* Form styles */
+#post-form {
+    width: 25%;
+    position: fixed;
+    top: 4rem;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 2px solid white;
+    background-color: #282828;
+    color: #f0f0f0;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 label {
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
     font-weight: bold;
 }
 
 input[type="text"],
 textarea {
-    margin-bottom: 10px;
-    padding: 5px;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #f0f0f0;
+    background-color: #4a4a4a;
+    color: #f0f0f0;
 }
 
 input[type="submit"],
-.post-form button {
-    padding: 5px 10px;
+#post-form button {
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     border: none;
-    background-color: rgb(26 26 26);
-    color: #fff;
+    background-color: #00c8ff;
+    color: #f0f0f0;
     cursor: pointer;
 }
 
 input[type="submit"]:hover,
-.post-form button:hover {
-    background-color: rgb(26 26 26);
+#post-form button:hover {
+    background-color: #00b0e6;
 }
 
 /* Media query breakpoints for responsiveness.  Design for mobile first. */

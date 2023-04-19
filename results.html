@@ -32,23 +32,17 @@
     </header>
 
     <main>
-        <section>
-            
+        <section>           
             <div class="results-container">
                 <!-- Does JSON still inject here? My code was changed. -->
 
-                <form class="post-form">
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" id="username" placeholder="Enter your username">
-                    <label for="location">Location:</label>
-                    <input type="text" name="location" id="location" placeholder="Enter your location">
+                <form id="post-form">
                     <label for="text">Text:</label>
                     <textarea name="text" id="text" placeholder="Enter your post"></textarea>
-                    <label for="hashtags">Hashtags:</label>
-                    <input type="text" name="hashtags" id="hashtags" placeholder="Enter your hashtags (comma-separated)">
                     <button type="submit">Post</button>
                 </form>
-
+    
+                <div id="post-container"></div>
             </div>
         </section>
     </main>

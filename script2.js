@@ -164,46 +164,37 @@ function getCurrentTime() {
     return `${hours}${minutes}`;
 }
 
-// Handle the form submission to create a new post
-const createPostForm = document.getElementById('create-post-form');
-createPostForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const usernameInput = createPostForm.querySelector('input[name="username"]');
-    const locationInput = createPostForm.querySelector('input[name="location"]');
-    const textInput = createPostForm.querySelector('textarea[name="text"]');
-    const hashtagsInput = createPostForm.querySelector('input[name="hashtags"]');
-    const username = usernameInput.value.trim() || 'guest';
-    const location = locationInput.value.trim() || 'Unknown';
-    const text = textInput.value.trim();
-    const hashtags = hashtagsInput.value.split(',').map(tag => tag.trim());
-    if (text) {
-        createPost(username, location, text, hashtags);
-        usernameInput.value = '';
-        locationInput.value = '';
-        textInput.value = '';
-        hashtagsInput.value = '';
-    }
-});
-
 // Handle the form submission to add a comment
 postContainer.addEventListener('submit', (event) => {
-    if (event.target.matches('.post-comments form')) {
-        event.preventDefault();
-        addComment(event.target);
-    }
+  if (event.target.matches('.post-comments form')) {
+      event.preventDefault();
+      addComment(event.target);
+  }
 });
 
 // Handle the form submission to add an interaction
 postContainer.addEventListener('submit', (event) => {
-    if (event.target.matches('.post-interactions form')) {
-        event.preventDefault();
-        addInteraction(event.target);
-    }
+  if (event.target.matches('.post-interactions form')) {
+      event.preventDefault();
+      addInteraction(event.target);
+  }
 });
 
 // Handle the click event to toggle the visibility of the interactions
 postContainer.addEventListener('click', (event) => {
-    if (event.target.matches('.post-text')) {
-        toggleInteractions(event.target);
-    }
+  if (event.target.matches('.post-text')) {
+      toggleInteractions(event.target);
+  }
+});
+
+// Handle the form submission to create a new post
+const postForm = document.getElementById('post-form');
+postForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const textInput = postForm.querySelector('textarea[name="text"]');
+  const text = textInput.value.trim();
+  if (text) {
+    createPost('guest', 'Unknown', text, []);
+    textInput.value = '';
+  }
 });
