@@ -9,7 +9,13 @@ let data = {
 // Load the posts from the data object
 loadPosts(data);
 
-// Create a new post
+/**
+* createPost() creates a new post, adds it to a data store, updates the data store, and adds the post to the user interface for display
+* @param {[string]} username - The username of the user who created the post.
+* @param {[string]} location - Represents the location of the post.
+* @param {[string]} text - Represents the tect content of the post.
+* @param {[array]} hashtags - An array storing each hashtag (string) associated with the post.
+*/
 function createPost(username, location, text, hashtags) {
     const newPost = {
         "id": generateId(),
