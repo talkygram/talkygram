@@ -41,11 +41,12 @@ body {
     line-height: 3rem;
 }
 
-.header-content-left {
-    display: flex;
+.header-content-center {
+    /* display: flex; */
     justify-content: start;
     align-items: center;
     width: 50%;
+    border: solid 1px red;
 }
 
 .logo-header {
@@ -61,8 +62,9 @@ body {
     align-items: center;
 }
 
-.search-bar {
+#search-bar {
     height: 1.5rem;
+    width: 100%;
     outline: none;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
@@ -228,22 +230,17 @@ main section {
 
 /* Form styles */
 #post-form {
-    width: 25%;
-    position: fixed;
-    top: 4rem;
-    margin: auto;
     padding: 1rem;
     border-radius: 2rem;
     border: 2px solid white;
     background-color: #282828;
     color: #f0f0f0;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin: 1rem;
 }
 
 label {
@@ -253,7 +250,7 @@ label {
 
 input[type="text"],
 textarea {
-    margin-bottom: 1rem;
+    margin: 1rem;
     padding: 0.5rem;
     border-radius: 5px;
     border: 1px solid #f0f0f0;
@@ -263,9 +260,10 @@ textarea {
 
 input[type="submit"],
 #post-form button {
-    padding: 0.5rem 1rem;
+    margin: 1rem;
+    padding: 0.5rem;
     border-radius: 5px;
-    border: none;
+    border: 1px solid #00c8ff;
     background-color: #00c8ff;
     color: #f0f0f0;
     cursor: pointer;
