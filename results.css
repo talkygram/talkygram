@@ -1,3 +1,38 @@
+/* CSS Resets */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
 @font-face {
     font-family: 'opendyslexic3bold';
     src: url('fonts/opendyslexic3-bold-webfont.woff2') format('woff2'), url('fonts/opendyslexic3-bold-webfont.woff') format('woff');
@@ -13,9 +48,6 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: opendyslexic3regular, Arial, sans-serif;
     font-size: 12px;
 }
@@ -35,27 +67,32 @@ body {
 
 .header-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     background-color: #1A1A1A;
     line-height: 3rem;
 }
 
-.header-content-center {
-    /* display: flex; */
-    justify-content: start;
+.header-content-top {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    width: 50%;
-    border: solid 1px red;
 }
 
 .logo-header {
-    margin: 0 2rem;
+    margin: 0 1rem;
     font-family: "Brush Script MT", "Brush Script Std", cursive;
     font-size: 2rem;
     color: #FDDEFD;
     text-shadow: 0 0 7px #F0F, 0 0 10px #F0F, 0 0 21px #F0F, 0 0 42px #F0F, 0 0 151px #F0F;
 }
+
+/* .sign-in-button {
+    border: 1px solid #00C8FF;
+    color: #00C8FF;
+    background-color: #1A1A1A;
+    border-radius: 5px;
+    margin: 0 1rem;
+} */
 
 .search-bar-container {
     display: flex;
@@ -112,17 +149,6 @@ body {
     border: none;
     cursor: pointer;
     color: black;
-}
-
-.header-content-right button {
-    height: 1.5rem;
-    border: 1px solid #00C8FF;
-    color: #00C8FF;
-    background-color: #1A1A1A;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin: 0 0.5rem;
-    padding: 0 0.5rem;
 }
 
 footer {
