@@ -97,24 +97,25 @@ body {
 .search-bar-container {
     display: flex;
     align-items: center;
+    margin-left: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 #search-bar {
     height: 1.5rem;
     width: 100%;
     outline: none;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    border-left: 2px solid black;
+    border: 2px solid white;
     color: white;
     background-color: #1A1A1A;
     font-size: 1rem;
     padding: 1rem 0;
+    margin: 0;
+    /* margin: 0, 0, 0.5rem, 0.25rem; need some left margin and a small amount of right. need some bottom also */
     transition: all 0.3s ease-in-out;
 }
 
-.search-bar:focus {
-    width: 20rem;
+#search-bar:focus {
     background-color: #282828;
     border-color: #00C8FF;
 }
@@ -142,13 +143,11 @@ body {
     border-bottom: 2px solid black;
     border-right: 2px solid black;
     float: right;
-    height: 2rem;
-    width: 2rem;
     background-color: #1A1A1A;
     font-size: 1rem;
     border: none;
     cursor: pointer;
-    color: black;
+    color: white;
 }
 
 footer {
@@ -283,6 +282,8 @@ textarea {
     background-color: #4a4a4a;
     color: #f0f0f0;
 }
+
+/* Need to add the same focus effect from search bar on the textarea "enter post" container */
 
 input[type="submit"],
 #post-form button {
