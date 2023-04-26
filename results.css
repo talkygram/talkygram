@@ -159,11 +159,21 @@ footer {
 
 .footer-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: rgb(26 26 26);
     padding: 1.5rem 0;
     color: #00c8ff;
+}
+
+.new-post-container button {
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #00c8ff;
+    background-color: #00c8ff;
+    color: #f0f0f0;
+    cursor: pointer;
 }
 
 main section {
