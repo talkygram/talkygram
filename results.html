@@ -12,17 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- should script 1 also be linked, viktor? -->
-    <script src="script2.js" defer></script>
+    <script src="results-script.js" defer></script>
 </head>
 <body>
     <header>
         <div class="header-content">
             <div class="header-content-top">
                 <p class="logo-header">talkygram</p>
-                <!-- <div class="sign-in-button-container">
-                    <button class="sign-in-button">Sign In</button>
-                </div> -->
             </div>
 
             <div class="header-content-bottom">
@@ -36,10 +32,10 @@
 
     <main>
         <section>           
-            <div class="results-container">
+            <div id="results-container">
                 <!-- Does JSON still inject here? My code was changed. -->
 
-                <form id="post-form">
+                <form id="post-form" onsubmit="return createPost("JimmyJohnJr", this, 1)">
                     <label for="text">Text:</label>
                     <textarea name="text" id="text" placeholder="Enter your post"></textarea>
                     <button type="submit">Post</button>
