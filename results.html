@@ -33,10 +33,12 @@
     <main>
         <section>           
             <div id="results-container">
-                <!-- Does JSON still inject here? My code was changed. -->
                 <div id="new-post-container">
                     <form id="post-form" onsubmit="return createPost('JimmyJohnJr', this, 1)">
-                        <label for="text">Text:</label>
+                        <div class="post-form-header">
+                            <label for="text">Text:</label>
+                            <button id="close-button" type="button"><i class="fa fa-close"></i></button>
+                        </div>
                         <textarea name="text" id="text" placeholder="Enter your post"></textarea>
                         <button id="post-button" type="submit">Post</button>
                     </form>

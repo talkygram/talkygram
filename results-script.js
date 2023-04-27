@@ -345,7 +345,7 @@ function addInteraction(form) {
 
 loadPosts(data);
 
-// Create an event listener that will hide existing posts and only display the "Text: enter your post" container.
+// An event listener that will hide existing posts and only display the "Text: enter your post" container.
 const toggleCreatePost = document.getElementById("new-post-button");
 toggleCreatePost.addEventListener('click', (event) => {
     const postContainer = document.getElementById("post-container");
@@ -354,7 +354,7 @@ toggleCreatePost.addEventListener('click', (event) => {
     newPostContainer.style.display = "block";
 });
 
-// Create an event listener that will hide the new post container and only display the existing posts.
+// An event listener that will hide the new post container and only display the existing posts.
 const exitCreatePost = document.getElementById("post-button");
 exitCreatePost.addEventListener('click', (event) => {
     const postContainer = document.getElementById("post-container");
@@ -363,4 +363,11 @@ exitCreatePost.addEventListener('click', (event) => {
     newPostContainer.style.display = "none";
 });
 
-// need an x button in top right corner of new-post and an event listener to exit out of there to existing posts.
+// An event listener that will hide the new post container and only display the existing posts.
+const exitCreatePost2 = document.getElementById("close-button");
+exitCreatePost2.addEventListener('click', (event) => {
+    const postContainer = document.getElementById("post-container");
+    const newPostContainer = document.getElementById("new-post-container");
+    postContainer.style.display = "block";
+    newPostContainer.style.display = "none";
+});
