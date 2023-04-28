@@ -203,9 +203,16 @@ main section {
     display: none;
 }
 
+#results-container {
+    width: 90%;
+}
+
+.post-text-area {
+    max-width: 98%;
+}
+
 #post-container {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 2rem 0;
     width: 100%;
     max-width: 1200px;
     display: flex;

@@ -345,6 +345,7 @@ function addInteraction(form) {
 
 loadPosts(data);
 
+// Event listeners for display toggling
 // An event listener that will hide existing posts and only display the "Text: enter your post" container.
 const toggleCreatePost = document.getElementById("new-post-button");
 toggleCreatePost.addEventListener('click', (event) => {
