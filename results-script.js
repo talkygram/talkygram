@@ -372,3 +372,16 @@ exitCreatePost2.addEventListener('click', (event) => {
     postContainer.style.display = "block";
     newPostContainer.style.display = "none";
 });
+
+// Injects homepage.html body into index.html body
+// get a reference to the body element
+const body = document.body;
+
+// fetch the homepage HTML file
+fetch('homepage.html')
+  .then(response => response.text())
+  .then(html => {
+    // set the HTML contents of the body element
+    body.innerHTML = html;
+  })
+  .catch(error => console.error(error));
