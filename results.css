@@ -199,6 +199,10 @@ main section {
     flex-direction: column;
 }
 
+#new-post-container {
+    display: none;
+}
+
 #post-container {
     margin-top: 2rem;
     margin-bottom: 2rem;
