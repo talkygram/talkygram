@@ -15,49 +15,51 @@
     <script src="results-script.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="header-content-top">
-                <p class="logo-header">talkygram</p>
-            </div>
+    <div class="page-container">
+        <header>
+            <div class="header-content">
+                <div class="header-content-top">
+                    <p class="logo-header">talkygram</p>
+                </div>
 
-            <div class="header-content-bottom">
-                <div class="search-bar-container">
-                    <input type="text" id="search-bar" placeholder="Search...">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+                <div class="header-content-bottom">
+                    <div class="search-bar-container">
+                        <input type="text" id="search-bar" placeholder="Search...">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main>
-        <section>           
-            <div id="results-container">
-                <div id="new-post-container">
-                    <form id="post-form" onsubmit="return createPost('JimmyJohnJr', this, 1)">
-                        <div class="post-form-header">
-                            <label for="text">Text:</label>
-                            <button id="close-button" type="button"><i class="fa fa-close"></i></button>
-                        </div>
-                        <textarea name="text" id="text" placeholder="Enter your post"></textarea>
-                        <button id="post-button" type="submit">Post</button>
-                    </form>
-                </div>
+        <main>
+            <section>           
+                <div id="results-container">
+                    <div id="new-post-container">
+                        <form id="post-form" onsubmit="return createPost('JimmyJohnJr', this, 1)">
+                            <div class="post-form-header">
+                                <label for="text">Text:</label>
+                                <button id="close-button" type="button"><i class="fa fa-close"></i></button>
+                            </div>
+                            <textarea name="text" id="text" placeholder="Enter your post"></textarea>
+                            <button id="post-button" type="submit">Post</button>
+                        </form>
+                    </div>
     
-                <div class="toggle-existing-posts">
-                    <div id="post-container"></div>
+                    <div class="toggle-existing-posts">
+                        <div id="post-container"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>© 2023 talkygram</p>
+                <div class="new-post-button-container">
+                    <button id="new-post-button">Create Post</button>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <p>© 2023 talkygram</p>
-            <div class="new-post-button-container">
-                <button id="new-post-button">Create Post</button>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>
